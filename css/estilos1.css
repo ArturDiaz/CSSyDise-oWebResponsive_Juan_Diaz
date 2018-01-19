@@ -1,6 +1,10 @@
+*{
+  font-family: 'Dancing Script', cursive;
+}
 body{
   margin: 5px;
   height: 100%;
+  width: 100%;
   background-color: #02010a;
   animation: miAnimacion 1s;
 }
@@ -19,35 +23,34 @@ body{
   }
 }
 
-.encabezado{
+header{
+  display: flex;
+  display: -webkit-flex;
   margin: 0;
   background-color: #5b7989;
+  width: 100%;
   height: 15%;
   border-radius: 10px 10px 0px 0px;
 }
 
-header{
-  width: 900px;
+header .titulo{
+  width: 60%;
   height: 100%;
-  position: fixed;
-  top: 0;
-}
-
-.titulo{
   color: white;
-  margin: 30px 20px;
-  text-align: left;
+  margin: 0;
+  text-align: center;
   text-shadow: 2px 2px #02010a; */sombra texto
+
 }
 
-.menu{
+header .menu{
+  width: 40%;
+  padding: 40px 0px;
   float: right;
-  margin: -55px 20px;
-  display: block;
-  height: 100%;
+  text-align: center;
 }
 
-a{
+.menu a{
   color: white;
   margin: 0px 10px;
 }
@@ -57,19 +60,127 @@ a[href="#"]{
   text-decoration: none;
 }
 
-.contenido1{
-  background-color: #82c3a6;
-  height: 35%;
-}
-.contenido2{
-  background-color: #d5c75f;
-  height: 25%;
+#contenido{
+  width: 100%;
 }
 
-.pie{
+#imgcentro{
+  background-color: #82c3a6;
+  height: 60%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+
+#imgcentro img{
+  height: 100%;
+  width: 800px;
+}
+
+img{
+  box-shadow: 2px 2px #02010a;
+}
+#contenido #imgsecundaria{
+  background-color: #d5c75f;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  text-decoration: underline;
+}
+
+#contenido #imgsecundaria img{
+  width: 80%;
+  height: 40%;
+}
+
+#contenido #imgsecundaria .img{
+  width: 60%;
+  text-align: center;
+}
+
+#contenido #imgsecundaria #imagen_izq img:hover{
+  transform: rotate(10deg);
+  box-shadow: 2px 2px #82c3a6;
+}
+
+#contenido #imgsecundaria #imagen_der img:hover{
+  transform: translate(20px,-5px);
+  box-shadow: 2px 2px #82c3a6;
+}
+
+
+footer{
   background-color:  #C6d5c5;
-  height: 25%;
+  height: 40%;
+  margin: 0px;
+  padding: 0px;
   border-radius: 0px 0px 10px 10px;
+}
+
+footer img{
+  box-shadow: none;
+}
+footer .contenido_pie{
+  width: 90%;
+  height: 100%;
+  margin: 0px 40px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+footer .contenido_pie div{
+  padding: 0px 5px;
+  margin: 0px 5px;
+}
+
+footer .contenido_pie .redes img{
+  width: 25px;
+  height: 25px;
+}
+
+/* Paisajes */
+#paisajes #img_paisajes{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#paisajes #img_paisajes .img2{
+  width: 33.3%;
+  text-align: center;
+}
+
+#paisajes #img_paisajes .img2 img{
+  width: 90%;
+  margin-top: 20px;
+}
+
+#img_paisajes{
+  width: 100%;
+  background: #d5c75f;
+  padding-bottom: 10px;
+}
+
+.img2:nth-child(1) img{
+  filter: blur(10px);
+}
+
+.img2:nth-child(2n) img{
+  border: 1px solid red;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.img2:nth-child(3) img{
+  filter: sepia(90%);
 }
 
 @media (min-width: 900px) {
@@ -79,4 +190,91 @@ a[href="#"]{
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+
+@media (max-width:899px) {
+  body{
+    width: 100%;
+    margin: 0px;
+    margin-left: none;
+    margin-right: none;
+  }
+
+  header{
+    height: 25%;
+    flex-direction: column;
+  }
+
+  header .titulo{
+    width: 100%;
+    height: 75%;
+    text-align: center;
+  }
+
+  header .menu{
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+  }
+
+  #imgcentro{
+    background-color: #82c3a6;
+    width: 100%;
+    height: 25%;
+    }
+
+    #imgcentro img{
+      height: 100%;
+      width: 90%;
+    }
+
+    #contenido #imgsecundaria{
+      flex-direction: column;
+      text-decoration: underline;
+    }
+
+    #contenido #imgsecundaria img{
+      width: 90%;
+      height: 40%;
+    }
+
+    #contenido #imgsecundaria .img{
+      width: 100%;
+      text-align: center;
+    }
+
+    footer{
+      height: 120%;
+    }
+
+    footer .contenido_pie{
+      width: 90%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      margin: 0px;
+    }
+
+    footer .contenido_pie div{
+      padding: 0px;
+      margin: 0px;
+    }
+
+
+    #paisajes #img_paisajes{
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #paisajes #img_paisajes .img2{
+      width: 90%;
+      text-align: center;
+      padding: 0 4%;
+    }
+
+    #paisajes #img_paisajes .img2 img{
+      width: 100%;
+    }
 }
